@@ -1,0 +1,26 @@
+<ion-header no-border>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button menu="idMenu" color="primary"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title color="primary">Componentes Ionic 4</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let componente of componentes | async" 
+              [routerLink]="componente.redirectTo" 
+              slot="end" 
+              detail>
+      <ion-icon slot="start"
+                [name]="componente.icon"
+                color="primary"></ion-icon>
+      <ion-label>{{ componente.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

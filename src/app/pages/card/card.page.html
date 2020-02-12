@@ -1,0 +1,18 @@
+<app-header titulo="Card"></app-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let movie of movies">
+    <img [src]="movie.Poster" />
+    <ion-card-header>
+      <ion-card-subtitle>{{ movie.Year }}</ion-card-subtitle>
+      <ion-card-title>{{ movie.Title }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

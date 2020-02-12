@@ -1,0 +1,51 @@
+<app-header titulo="Segment"></app-header>
+
+
+<ion-toolbar>
+  <!-- Default Segment -->
+  <ion-segment (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="todos">
+      <ion-label>Todos</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="dc">
+      <ion-label>DC</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="marvel">
+      <ion-label>Marvel</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+
+<ion-content>
+
+  <ion-card *ngFor="let hero of heroes | filtro:segmentSelected:'casa'" class="animated fadeIn fast">
+    <img [src]=hero.img />
+    <ion-card-header>
+      <ion-card-subtitle>{{ hero.casa }}</ion-card-subtitle>
+      <ion-card-title>{{ hero.nombre }} <small>{{ hero.aparicion | date:'dd MMMM y' }}</small></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ hero.bio }}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list *ngIf="heroes.length === 0">
+    <ion-card *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1]" class="animated flash slow infinite">
+      <ion-thumbnail>
+        <ion-skeleton-text></ion-skeleton-text>
+      </ion-thumbnail>
+      <ion-card-header>
+        <ion-card-subtitle><ion-skeleton-text width="20%"></ion-skeleton-text></ion-card-subtitle>
+        <ion-card-title><ion-skeleton-text width="70%" ></ion-skeleton-text></ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+       <ion-skeleton-text width="100%"></ion-skeleton-text>
+       <ion-skeleton-text width="100%"></ion-skeleton-text>
+       <ion-skeleton-text width="100%"></ion-skeleton-text>
+       <ion-skeleton-text width="100%"></ion-skeleton-text>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+
+</ion-content>

@@ -1,0 +1,63 @@
+<ion-header no-border>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Botones</ion-title>
+  
+    <ion-buttons slot="end">
+      <ion-button color="danger">
+        <ion-icon name="heart"></ion-icon>
+      </ion-button>
+      <ion-button color="secondary">
+        <ion-icon name="star"></ion-icon>
+      </ion-button>
+
+      <ion-button color="dark">
+        <ion-icon name="more"></ion-icon>
+      </ion-button>
+
+
+    </ion-buttons>
+
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <h1>Botones Normales</h1>
+  <ion-button size="small" extend="full">Small</ion-button>
+  <ion-button size="default" extend="full">Default</ion-button>
+  <ion-button size="large" extend="full">Large</ion-button>
+
+  <h1>Routers o navegaciones</h1>
+  <ion-button expand="full" routerLink="/alert" color="tertiary">
+    Go to Alert Page
+  </ion-button>
+
+  <h1>ion-row y ion-col</h1>
+  <ion-row>
+    <ion-col>
+      <ion-button expand="full" routerLink="/alert" color="tertiary">
+        Go to Alert Page
+      </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button expand="full" routerLink="/avatar" color="danger">
+        Go to Avatar Page
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <h1>Propiedades Fill</h1>
+  <ion-button extend="block" fill="outline">Outline</ion-button>
+  <ion-button extend="block" fill="solid">Solid</ion-button>
+  <ion-button extend="block" fill="default">Default</ion-button>
+  <ion-button extend="block" fill="clear">Clear</ion-button>
+
+
+
+</ion-content>

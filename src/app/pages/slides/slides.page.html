@@ -1,0 +1,32 @@
+<ion-header no-border [ngClass]="ocultar">
+  <ion-toolbar>
+    <img src="/assets/img/margot.png" alt="margot" class="avatar animated fadeIn">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides mode="ios" pager="true" scrollbar="true" class="slide-full">
+
+    <ion-slide *ngFor="let hero of heroes">
+      <ion-card mode="ios">
+        <img [src]=hero.img class="slide-image" />
+        <ion-card-header>
+          <ion-card-subtitle>{{ hero.casa }}</ion-card-subtitle>
+          <ion-card-title>{{ hero.nombre }} </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Primera apariencia en {{ hero.aparicion | date:'dd MMMM y' }}
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-button (click)="goHome()">
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-slide>
+
+  </ion-slides>
+
+</ion-content>

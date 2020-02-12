@@ -1,0 +1,24 @@
+<ion-menu contentId="menuPrincipal" menuId="idMenu" side="start" type="overlay">
+  
+  <ion-header no-border>
+    <ion-toolbar color="primary">
+      <ion-title>Menu principal</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+
+    <ion-list>
+      <!-- Etiqueta necesaria para auto ocultar el menu lateral al seleccionar una opcion -->
+      <ion-menu-toggle *ngFor="let opcion of opciones | async">
+        <ion-item [routerLink]="opcion.redirectTo">
+          <ion-icon slot="start" 
+                    [name]="opcion.icon"></ion-icon>
+          <ion-label>{{ opcion.name }}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
